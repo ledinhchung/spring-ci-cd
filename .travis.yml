@@ -2,7 +2,9 @@ language: java
 services:
   - docker
 
-before_install:
-  - docker build -t chungld/spring-ci-cd .
-  - docker run -d -p 80:8080 chungld/spring-ci-cd
+build:
+  - docker build -t registry.heroku.com/${APP_NAME} .
   - docker ps -a
+deploy:
+  - docker login -u _ -p $HEROKU_TOKEN registry.heroku.com
+  - docker push registry.heroku.com/${APP_NAME}
