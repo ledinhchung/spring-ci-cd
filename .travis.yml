@@ -6,5 +6,4 @@ build:
   - docker build -t registry.heroku.com/${APP_NAME} .
   - docker ps -a
   - docker login -u _ -p $HEROKU_TOKEN registry.heroku.com
-deploy:
-  docker push registry.heroku.com/${APP_NAME}
+  - docker push registry.heroku.com/${APP_NAME}
