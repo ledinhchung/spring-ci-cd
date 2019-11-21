@@ -7,13 +7,12 @@ COPY build.gradle build.gradle
 COPY settings.gradle settings.gradle
 COPY src src
 
-RUN ./gradlew build -DskipTests
-RUN mkdir -p build/libs/dependency && (cd build/libs/dependency; jar -xf ../*.jar)
+RUN ./gradlew bootJar
 
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-ARG DEPENDENCY=/workspace/app/build/libs/dependency
-COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
-COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-cp","app:app/lib/*","com/chungle/demo/demo/DemoApplication"]
+ARG DEPENDENCY=/workspace/app/build/libs/
+
+COPY --from=build ${DEPENDENCY}/demo-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
