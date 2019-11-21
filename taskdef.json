@@ -1,9 +1,9 @@
 {
-  "executionRoleArn": "arn:aws:iam::110008036506:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::875603473394:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "spring-website",
-      "image": "110008036506.dkr.ecr.us-east-1.amazonaws.com/spring-ci-cd",
+      "image": "875603473394.dkr.ecr.us-east-1.amazonaws.com/spring-ci-cd",
       "essential": true,
       "portMappings": [
         {
