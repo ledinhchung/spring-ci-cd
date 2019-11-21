@@ -22,4 +22,9 @@ public class DemoApplication {
   public String helth() {
     return "OK";
   }
+
+  @GetMapping("test")
+  public String test() {
+    return "Hello Chung";
+  }
 }
