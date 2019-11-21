@@ -20,6 +20,6 @@ public class DemoApplication {
 
   @GetMapping("/SpringService")
   public String helth() {
-    return "OK"
+    return "OK";
   }
 }
