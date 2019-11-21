@@ -25,6 +25,6 @@ public class DemoApplication {
 
   @GetMapping("test")
   public String test() {
-    return "Hello Chung";
+    return "Hello Chung 222";
   }
 }
