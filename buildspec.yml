@@ -18,7 +18,7 @@ phases:
       - echo Build completed on `date`
       - echo push the docker image to Amazon ECR
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - printf '{"ImageURI":"$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"}' > imageDetail.json
+      - echo '{"ImageURI":"875603473394.dkr.ecr.us-east-1.amazonaws.com/spring-ci-cd:latest"}' > imageDetail.json
 artifacts:
   files:
     - imageDetail.json
