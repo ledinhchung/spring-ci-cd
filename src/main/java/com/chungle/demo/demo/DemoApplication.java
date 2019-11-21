@@ -17,4 +17,9 @@ public class DemoApplication {
   public String home() {
     return "Hello this is message from Demo 1 application";
   }
+
+  @GetMapping("/SpringService")
+  public String helth() {
+    return "OK"
+  }
 }
