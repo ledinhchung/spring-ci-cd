@@ -23,7 +23,7 @@ public class DemoApplication {
     return "OK";
   }
 
-  @GetMapping("test")
+  @GetMapping("/test")
   public String test() {
     return "Hello Chung 222";
   }
