@@ -22,7 +22,7 @@ class DemoApplicationTests {
 
 	@Test
 	void shouldReturnHelloMessage() throws Exception {
-		this.mocMvc.perform(get("/test")).andExpect(content().string(containsString("Hello Chung 222")));
+		this.mocMvc.perform(get("/test")).andExpect(content().string(containsString("Hello Chung 2221")));
 	}
 
 }
